@@ -9,12 +9,8 @@ package banco;
  *
  * @author joaocdfarias
  */
-public class Persona {
-    private String nome;
-    private String profissao;
-    private Double salario;
-    private String[] hobbies;
-    private Endereco endereco;
-    private String genero;
-    private int idade;
+public class Endereco {
+    private String estado;
+    private String cidade;
+    private String bairro;
 }
