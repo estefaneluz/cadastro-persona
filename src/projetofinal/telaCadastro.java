@@ -71,6 +71,7 @@ public class telaCadastro extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         btnEnviar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
@@ -126,9 +127,11 @@ public class telaCadastro extends javax.swing.JFrame {
         inputHobbies.setRows(5);
         jScrollPane1.setViewportView(inputHobbies);
 
+        buttonGroup1.add(radioOutro);
         radioOutro.setText("Outro");
         radioOutro.setName("genero"); // NOI18N
 
+        buttonGroup1.add(radioFem);
         radioFem.setText("Feminino");
         radioFem.setName("genero"); // NOI18N
         radioFem.addActionListener(new java.awt.event.ActionListener() {
@@ -137,6 +140,7 @@ public class telaCadastro extends javax.swing.JFrame {
             }
         });
 
+        buttonGroup1.add(radioMasc);
         radioMasc.setText("Masculino");
         radioMasc.setName("genero"); // NOI18N
         radioMasc.addActionListener(new java.awt.event.ActionListener() {
@@ -307,6 +311,7 @@ public class telaCadastro extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEnviar;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JTextField inputEndereco;
     private javax.swing.JTextArea inputHobbies;
     private javax.swing.JTextField inputIdade;
