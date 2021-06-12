@@ -127,10 +127,23 @@ public class telaCadastro extends javax.swing.JFrame {
         jScrollPane1.setViewportView(inputHobbies);
 
         radioOutro.setText("Outro");
+        radioOutro.setName("genero"); // NOI18N
 
         radioFem.setText("Feminino");
+        radioFem.setName("genero"); // NOI18N
+        radioFem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioFemActionPerformed(evt);
+            }
+        });
 
         radioMasc.setText("Masculino");
+        radioMasc.setName("genero"); // NOI18N
+        radioMasc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioMascActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -239,6 +252,14 @@ public class telaCadastro extends javax.swing.JFrame {
     private void inputNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputNomeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_inputNomeActionPerformed
+
+    private void radioMascActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioMascActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_radioMascActionPerformed
+
+    private void radioFemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioFemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_radioFemActionPerformed
 
     /**
      * @param args the command line arguments

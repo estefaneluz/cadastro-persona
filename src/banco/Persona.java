@@ -17,4 +17,104 @@ public class Persona {
     private Endereco endereco;
     private String genero;
     private int idade;
+
+    /**
+     * @return the nome
+     */
+    public String getNome() {
+        return nome;
+    }
+
+    /**
+     * @param nome the nome to set
+     */
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    /**
+     * @return the profissao
+     */
+    public String getProfissao() {
+        return profissao;
+    }
+
+    /**
+     * @param profissao the profissao to set
+     */
+    public void setProfissao(String profissao) {
+        this.profissao = profissao;
+    }
+
+    /**
+     * @return the salario
+     */
+    public Double getSalario() {
+        return salario;
+    }
+
+    /**
+     * @param salario the salario to set
+     */
+    public void setSalario(Double salario) {
+        this.salario = salario;
+    }
+
+    /**
+     * @return the hobbies
+     */
+    public String[] getHobbies() {
+        return hobbies;
+    }
+
+    /**
+     * @param hobbies the hobbies to set
+     */
+    public void setHobbies(String[] hobbies) {
+        this.hobbies = hobbies;
+    }
+
+    /**
+     * @return the endereco
+     */
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    /**
+     * @param endereco the endereco to set
+     */
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
+
+    /**
+     * @return the genero
+     */
+    public String getGenero() {
+        return genero;
+    }
+
+    /**
+     * @param genero the genero to set
+     */
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
+    /**
+     * @return the idade
+     */
+    public int getIdade() {
+        return idade;
+    }
+
+    /**
+     * @param idade the idade to set
+     */
+    public void setIdade(int idade) {
+        this.idade = idade;
+    }
+    
+    
 }
