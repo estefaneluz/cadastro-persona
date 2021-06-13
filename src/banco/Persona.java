@@ -28,7 +28,7 @@ public class Persona {
         this.genero = genero;
         this.idade = idade;
     }
-
+    
     /**
      * @return the nome
      */

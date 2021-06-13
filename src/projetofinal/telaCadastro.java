@@ -7,7 +7,9 @@ package projetofinal;
 
 import banco.Persona;
 import banco.Endereco;
+import java.util.Arrays;
 import javax.swing.UIManager;
+import projetofinal.telaRetorno;
 
 /**
  *
@@ -15,12 +17,16 @@ import javax.swing.UIManager;
  */
 public class telaCadastro extends javax.swing.JFrame {
 
-    public void getShowData() {
-   
+    // método que chama a outra tela e minimiza esta aqui
+    public void showInfo() {
+        telaRetorno tr = new telaRetorno();
+        tr.setVisible(true);
+        this.dispose();
+        
         Double salario = Double.parseDouble(inputSalario.getText());
         int idade = Integer.parseInt(inputIdade.getText());
         String[] hobbies = inputHobbies.getText().split(",");
-        
+
         String genero;
         if(radioMasc.isSelected()) genero = "Masculino";
         else if(radioFem.isSelected())genero = "Feminino";
@@ -35,46 +41,24 @@ public class telaCadastro extends javax.swing.JFrame {
             genero,
             idade
         );
-             
         
-//        if(radioMasc.isSelected()){;;
-//           genero = "Masculino";
-//           tr.labelGenero.setText(genero);
-//        }
-//        if(radioFem.isSelected()){
-//            genero = "Feminino";
-//            tr.labelGenero.setText(genero);
-//        }
-//        if(radioOutro.isSelected()){
-//            genero = "Outro";
-//            tr.labelGenero.setText(genero);
-//        }
-//        
-//        tr.labelNome.setText(nome);;
-//        tr.labelIdade.setText(idade);
-//        tr.labelProfissao.setText(profissao);;
-//        tr.labelSalario.setText(salario);
-//        tr.labelHobbies.setText(hobbies);
-//        tr.labelEndereco.setText(endereco);
-        
-        
-    }
-        
-        // método que chama a outra tela e minimiza esta aqui
-    public void showInfo() {
-        telaRetorno tr = new telaRetorno();
-        tr.setVisible(true);
-        this.dispose();
+        tr.labelNome.setText(persona.getNome());
+        tr.labelGenero.setText(persona.getGenero());
+        tr.labelIdade.setText(Integer.toString(persona.getIdade()));
+        tr.labelProfissao.setText(persona.getProfissao());
+        tr.labelSalario.setText(Double.toString(persona.getSalario()));
+        tr.labelHobbies.setText(Arrays.toString(persona.getHobbies()));
+        tr.labelEndereco.setText(persona.getEndereco());
     }
      
-    
     /**
      * Creates new form telaCadastro
      */
     public telaCadastro() {
-        initComponents();
+        initComponents(); 
     }
-
+    
+        
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -259,7 +243,6 @@ public class telaCadastro extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
     
     private void btnEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarActionPerformed
         // TODO add your handling code here:

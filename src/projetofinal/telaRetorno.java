@@ -5,6 +5,8 @@
  */
 package projetofinal;
 
+import projetofinal.telaCadastro;
+import banco.Persona;
 import javax.swing.UIManager;
 
 /**
@@ -226,12 +228,12 @@ public class telaRetorno extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel labelEndereco;
-    private javax.swing.JLabel labelGenero;
-    private javax.swing.JLabel labelHobbies;
-    private javax.swing.JLabel labelIdade;
-    private javax.swing.JLabel labelNome;
-    private javax.swing.JLabel labelProfissao;
-    private javax.swing.JLabel labelSalario;
+    public javax.swing.JLabel labelEndereco;
+    public javax.swing.JLabel labelGenero;
+    public javax.swing.JLabel labelHobbies;
+    public javax.swing.JLabel labelIdade;
+    public javax.swing.JLabel labelNome;
+    public javax.swing.JLabel labelProfissao;
+    public javax.swing.JLabel labelSalario;
     // End of variables declaration//GEN-END:variables
 }
