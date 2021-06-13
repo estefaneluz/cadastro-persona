@@ -35,8 +35,7 @@ public class telaCadastro extends javax.swing.JFrame {
             genero,
             idade
         );
-        
-                
+             
         
 //        if(radioMasc.isSelected()){;;
 //           genero = "Masculino";

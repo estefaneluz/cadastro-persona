@@ -18,7 +18,7 @@ public class Persona {
     private String genero;
     private int idade;
     
-    Persona(String nome, String profissao, Double salario, String[] hobbies, String endereco,
+    public Persona(String nome, String profissao, Double salario, String[] hobbies, String endereco,
     String genero, int idade){
         this.nome = nome;
         this.profissao = profissao;
