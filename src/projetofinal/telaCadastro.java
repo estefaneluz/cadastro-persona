@@ -5,6 +5,9 @@
  */
 package projetofinal;
 
+import banco.Persona;
+import banco.Endereco;
+import java.util.Arrays;
 import javax.swing.UIManager;
 
 /**
@@ -13,55 +16,57 @@ import javax.swing.UIManager;
  */
 public class telaCadastro extends javax.swing.JFrame {
 
-    public void getShowData() {
-        String nome, genero, profissao, hobbies, endereco, idade, salario;
-        
-        nome = inputNome.getText();
-        profissao = inputProfissao.getText();
-        hobbies = inputHobbies.getText();
-        endereco = inputEndereco.getText();
-        idade = inputIdade.getText();
-        salario = inputSalario.getText();
-        
-        
-//        if(radioMasc.isSelected()){;;
-//           genero = "Masculino";
-//           tr.labelGenero.setText(genero);
-//        }
-//        if(radioFem.isSelected()){
-//            genero = "Feminino";
-//            tr.labelGenero.setText(genero);
-//        }
-//        if(radioOutro.isSelected()){
-//            genero = "Outro";
-//            tr.labelGenero.setText(genero);
-//        }
-//        
-//        tr.labelNome.setText(nome);;
-//        tr.labelIdade.setText(idade);
-//        tr.labelProfissao.setText(profissao);;
-//        tr.labelSalario.setText(salario);
-//        tr.labelHobbies.setText(hobbies);
-//        tr.labelEndereco.setText(endereco);
-        
-        
-    }
-        
-        // método que chama a outra tela e minimiza esta aqui
+    // método que chama a outra tela e minimiza esta aqui
     public void showInfo() {
         telaRetorno tr = new telaRetorno();
         tr.setVisible(true);
         this.dispose();
+        
+        //CRIAR O OBJETO ENDERECO AQUII!!!! 
+        
+        
+        //criando variaveis auxiliares para Persona 
+        
+        Double salario = Double.parseDouble(inputSalario.getText());
+        int idade = Integer.parseInt(inputIdade.getText());
+        String[] hobbies = inputHobbies.getText().split(",");
+
+        //atribuindo valor a genero 
+        String genero;
+        if(radioMasc.isSelected()) genero = "Masculino";
+        else if(radioFem.isSelected())genero = "Feminino";
+        else genero = "Outro";
+        
+        //objeto persona
+        Persona persona = new Persona(
+            inputNome.getText(),
+            inputProfissao.getText(),
+            salario,
+            hobbies,
+            inputEndereco.getText(),
+            genero,
+            idade
+        );
+        
+        //adicionando valores ao label 
+        tr.labelNome.setText(persona.getNome());
+        tr.labelGenero.setText(persona.getGenero());
+        tr.labelIdade.setText(Integer.toString(persona.getIdade()));
+        tr.labelProfissao.setText(persona.getProfissao());
+        tr.labelSalario.setText(Double.toString(persona.getSalario()));
+        tr.labelHobbies.setText(Arrays.toString(persona.getHobbies()));
+        tr.labelEndereco.setText(persona.getEndereco());
+        
     }
      
-    
     /**
      * Creates new form telaCadastro
      */
     public telaCadastro() {
-        initComponents();
+        initComponents(); 
     }
-
+    
+        
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -71,6 +76,7 @@ public class telaCadastro extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         btnEnviar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
@@ -126,11 +132,27 @@ public class telaCadastro extends javax.swing.JFrame {
         inputHobbies.setRows(5);
         jScrollPane1.setViewportView(inputHobbies);
 
+        buttonGroup1.add(radioOutro);
         radioOutro.setText("Outro");
+        radioOutro.setName("genero"); // NOI18N
 
+        buttonGroup1.add(radioFem);
         radioFem.setText("Feminino");
+        radioFem.setName("genero"); // NOI18N
+        radioFem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioFemActionPerformed(evt);
+            }
+        });
 
+        buttonGroup1.add(radioMasc);
         radioMasc.setText("Masculino");
+        radioMasc.setName("genero"); // NOI18N
+        radioMasc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioMascActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -178,7 +200,7 @@ public class telaCadastro extends javax.swing.JFrame {
                         .addComponent(jLabel7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(43, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnEnviar)
@@ -229,7 +251,6 @@ public class telaCadastro extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
     
     private void btnEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarActionPerformed
         // TODO add your handling code here:
@@ -239,6 +260,14 @@ public class telaCadastro extends javax.swing.JFrame {
     private void inputNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputNomeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_inputNomeActionPerformed
+
+    private void radioMascActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioMascActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_radioMascActionPerformed
+
+    private void radioFemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioFemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_radioFemActionPerformed
 
     /**
      * @param args the command line arguments
@@ -286,6 +315,7 @@ public class telaCadastro extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEnviar;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JTextField inputEndereco;
     private javax.swing.JTextArea inputHobbies;
     private javax.swing.JTextField inputIdade;
