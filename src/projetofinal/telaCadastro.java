@@ -23,15 +23,22 @@ public class telaCadastro extends javax.swing.JFrame {
         tr.setVisible(true);
         this.dispose();
         
+        //CRIAR O OBJETO ENDERECO AQUII!!!! 
+        
+        
+        //criando variaveis auxiliares para Persona 
+        
         Double salario = Double.parseDouble(inputSalario.getText());
         int idade = Integer.parseInt(inputIdade.getText());
         String[] hobbies = inputHobbies.getText().split(",");
 
+        //atribuindo valor a genero 
         String genero;
         if(radioMasc.isSelected()) genero = "Masculino";
         else if(radioFem.isSelected())genero = "Feminino";
         else genero = "Outro";
-
+        
+        //objeto persona
         Persona persona = new Persona(
             inputNome.getText(),
             inputProfissao.getText(),
@@ -42,6 +49,7 @@ public class telaCadastro extends javax.swing.JFrame {
             idade
         );
         
+        //adicionando valores ao label 
         tr.labelNome.setText(persona.getNome());
         tr.labelGenero.setText(persona.getGenero());
         tr.labelIdade.setText(Integer.toString(persona.getIdade()));
@@ -49,6 +57,7 @@ public class telaCadastro extends javax.swing.JFrame {
         tr.labelSalario.setText(Double.toString(persona.getSalario()));
         tr.labelHobbies.setText(Arrays.toString(persona.getHobbies()));
         tr.labelEndereco.setText(persona.getEndereco());
+        
     }
      
     /**

@@ -14,11 +14,11 @@ public class Persona {
     private String profissao;
     private Double salario;
     private String[] hobbies;
-    private String endereco;
+    private Endereco endereco;
     private String genero;
     private int idade;
     
-    public Persona(String nome, String profissao, Double salario, String[] hobbies, String endereco,
+    public Persona(String nome, String profissao, Double salario, String[] hobbies, Endereco endereco,
     String genero, int idade){
         this.nome = nome;
         this.profissao = profissao;
@@ -88,14 +88,14 @@ public class Persona {
     /**
      * @return the endereco
      */
-    public String getEndereco() {
+    public Endereco getEndereco() {
         return endereco;
     }
 
     /**
      * @param endereco the endereco to set
      */
-    public void setEndereco(String endereco) {
+    public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
     }
 
