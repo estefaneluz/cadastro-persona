@@ -5,6 +5,8 @@
  */
 package projetofinal;
 
+import banco.Persona;
+import banco.Endereco;
 import javax.swing.UIManager;
 
 /**
@@ -14,15 +16,27 @@ import javax.swing.UIManager;
 public class telaCadastro extends javax.swing.JFrame {
 
     public void getShowData() {
-        String nome, genero, profissao, hobbies, endereco, idade, salario;
+   
+        Double salario = Double.parseDouble(inputSalario.getText());
+        int idade = Integer.parseInt(inputIdade.getText());
+        String[] hobbies = inputHobbies.getText().split(",");
         
-        nome = inputNome.getText();
-        profissao = inputProfissao.getText();
-        hobbies = inputHobbies.getText();
-        endereco = inputEndereco.getText();
-        idade = inputIdade.getText();
-        salario = inputSalario.getText();
+        String genero;
+        if(radioMasc.isSelected()) genero = "Masculino";
+        else if(radioFem.isSelected())genero = "Feminino";
+        else genero = "Outro";
+
+        Persona persona = new Persona(
+            inputNome.getText(),
+            inputProfissao.getText(),
+            salario,
+            hobbies,
+            inputEndereco.getText(),
+            genero,
+            idade
+        );
         
+                
         
 //        if(radioMasc.isSelected()){;;
 //           genero = "Masculino";
@@ -195,7 +209,7 @@ public class telaCadastro extends javax.swing.JFrame {
                         .addComponent(jLabel7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(43, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnEnviar)
