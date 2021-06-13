@@ -14,9 +14,20 @@ public class Persona {
     private String profissao;
     private Double salario;
     private String[] hobbies;
-    private Endereco endereco;
+    private String endereco;
     private String genero;
     private int idade;
+    
+    Persona(String nome, String profissao, Double salario, String[] hobbies, String endereco,
+    String genero, int idade){
+        this.nome = nome;
+        this.profissao = profissao;
+        this.salario = salario;
+        this.hobbies = hobbies;
+        this.endereco = endereco;
+        this.genero = genero;
+        this.idade = idade;
+    }
 
     /**
      * @return the nome
@@ -77,14 +88,14 @@ public class Persona {
     /**
      * @return the endereco
      */
-    public Endereco getEndereco() {
+    public String getEndereco() {
         return endereco;
     }
 
     /**
      * @param endereco the endereco to set
      */
-    public void setEndereco(Endereco endereco) {
+    public void setEndereco(String endereco) {
         this.endereco = endereco;
     }
 
