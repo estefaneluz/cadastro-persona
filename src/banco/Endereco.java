@@ -14,6 +14,12 @@ public class Endereco {
     private String cidade;
     private String bairro;
 
+    public Endereco(String estado, String cidade,String bairro){
+        this.estado =estado;
+        this.cidade = cidade;
+        this.bairro = bairro;
+   
+    }
     /**
      * @return the estado
      */
