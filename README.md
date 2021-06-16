@@ -1,33 +1,26 @@
 # Cadastro de Persona :woman::man:
 
-### Objetivos
+### Objetivos  :dart:
 
 O algoritmo deve armazenar os dados do usuário e disponibilizá-los após seu cadastro.
 
-### Ferramentas
+### Ferramentas  :gear:
 
 - Linguagem Java
 - Interface JFrame
 - Biblioteca JTatto
 
-### Requisitos Funcionais
+### Requisitos Funcionais :bookmark_tabs:
 
 - Cadastrar dados da Persona
 - Exibir dados da Persona
 
-### Documentação
+### Documentação :memo:
 
 - Tabela de Requisitos
 - Tabela de Banco de Dados
 - Tabela das Variáveis
 
-### Gestão do projeto
+### Gestão do projeto :chart_with_upwards_trend:
 
 Metodologia SCRUM utilizando o quadro Kaban no software Trello
-
-### Time de desenvolvimento
-
-- Estéfane Luz
-- Gabriel Rocha
-- Isael Sobral
-- Tayanne Novais
