@@ -17,6 +17,19 @@ import javax.swing.UIManager;
 public class telaRetorno extends javax.swing.JFrame {
 
     
+    private void ConfirmarDados(){
+        JOptionPane confirmar = new JOptionPane();        
+        int Confirmar = confirmar.showConfirmDialog(null,"Os dados estão corretos?", "Confirmar",JOptionPane.YES_NO_OPTION);
+        if(Confirmar == JOptionPane.NO_OPTION){
+            telaCadastro tc = new telaCadastro();
+            tc.setVisible(true);
+            this.dispose();          
+        } else if(Confirmar == JOptionPane.YES_OPTION){
+              JOptionPane.showMessageDialog(null,"Dados cadastrados com sucesso!");
+              this.dispose();
+        }     
+    }
+    
     /**
      * Creates new form telaRetorno
      */
@@ -211,7 +224,7 @@ public class telaRetorno extends javax.swing.JFrame {
 
     private void btnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarActionPerformed
         // TODO add your handling code here:
-        
+        this.ConfirmarDados();
     }//GEN-LAST:event_btnConfirmarActionPerformed
 
     /**
